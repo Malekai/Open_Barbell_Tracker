@@ -1,0 +1,112 @@
+{
+  "users": {
+    "user1": {
+      "programs": {
+        "GZCL": {
+          "Week 1": {
+            "Day 1": ["Squatx3x5", "Benchx3x5"],
+            "Day 2": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            },
+            "Day 3": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            }
+          },
+          "Week 2": {
+            "Day 1": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            },
+            "Day 2": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            },
+            "Day 3": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            }
+          },
+          "Week 3": {
+            "Day 1": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            },
+            "Day 2": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            },
+            "Day 3": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            }
+          }
+        },
+        /**/ENDOFGZCL
+        "Texas Method": {
+          "Week 1": {
+            "Day 1": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            },
+            "Day 2": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            },
+            "Day 3": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            }
+          },
+          "Week 2": {
+            "Day 1": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            },
+            "Day 2": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            },
+            "Day 3": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            }
+          },
+          "Week 3": {
+            "Day 1": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            },
+            "Day 2": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            },
+            "Day 3": {
+              "Squat": { "weight": 285, "sets": "3+", "reps": "4" },
+              "Incline Bench": {"weight": 155, "sets": "3+", "reps": "10+" },
+              "Chest Supported Row": { "weight": null, "sets": "5", "reps": "max" }
+            }
+          }
+        }
+        /**/EndofTM
+      }
+    }
+  }
+}
