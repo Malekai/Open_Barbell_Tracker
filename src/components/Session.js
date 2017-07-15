@@ -13,8 +13,7 @@ class Session extends Component {
   }
 
   onButtonSave() {
-    const { movement1, movement2, movement3, movement4, movement5, movement6, notes } = this.props.session;
-    const { uid, currentWeek, name } = this.props;
+    const { movement1, movement2, movement3, movement4, movement5, movement6, notes, uid, currentWeek, name } = this.props;
 
     this.props.saveSession( movement1, movement2, movement3, movement4, movement5, movement6, notes, uid, currentWeek, name, notes);
   }
@@ -24,7 +23,7 @@ class Session extends Component {
 			<View>
         <CardSection>
           <Input
-          label="Movement 1:"
+          entryStyle={{ flex: 25 }}
           placeholder="Movement 1"
           value={this.props.movement1}
           onChangeText={value => this.props.sessionUpdate( { prop: 'movement1', value })}
@@ -33,7 +32,7 @@ class Session extends Component {
 
         <CardSection>
           <Input
-          label="Movement 2:"
+          entryStyle={{ flex: 25 }}
           placeholder="Movement 2"
           value={this.props.movement2}
           onChangeText={value => this.props.sessionUpdate( { prop: 'movement2', value })}
@@ -42,7 +41,7 @@ class Session extends Component {
 
         <CardSection>
           <Input
-          label="Movement 3:"
+          entryStyle={{ flex: 25 }}
           placeholder="Movement 3"
           value={this.props.movement3}
           onChangeText={value => this.props.sessionUpdate( { prop: 'movement3', value })}
@@ -51,7 +50,7 @@ class Session extends Component {
 
         <CardSection>
           <Input
-          label="Movement 4:"
+          entryStyle={{ flex: 25 }}
           placeholder="Movement 4"
           value={this.props.movement4}
           onChangeText={value => this.props.sessionUpdate( { prop: 'movement4', value })}
@@ -60,7 +59,7 @@ class Session extends Component {
 
         <CardSection>
           <Input
-          label="Movement 5:"
+          entryStyle={{ flex: 25 }}
           placeholder="Movement 5"
           value={this.props.movement5}
           onChangeText={value => this.props.sessionUpdate( { prop: 'movement5', value })}
@@ -69,7 +68,7 @@ class Session extends Component {
 
         <CardSection>
           <Input
-          label="Movement 6:"
+          entryStyle={{ flex: 25 }}
           placeholder="Movement 6"
           value={this.props.movement6}
           onChangeText={value => this.props.sessionUpdate( { prop: 'movement6', value })}
@@ -78,7 +77,9 @@ class Session extends Component {
 
         <CardSection>
           <Input
-          label="Notes:"
+          entryStyle={{ flex: 25 }}
+          noteStyle={{ height: 150, paddingTop: 5 }}
+          multiline={true}
           placeholder="Notes"
           value={this.props.notes}
           onChangeText={value => this.props.sessionUpdate( { prop: 'notes', value })}
@@ -95,6 +96,7 @@ class Session extends Component {
 		)
 	}
 }
+
 
 const mapStateToProps = state => {
   const { 
