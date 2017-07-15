@@ -16,11 +16,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React Native!"
 
-@interface liftTests : XCTestCase
+@interface open_barbell_trackerTests : XCTestCase
 
 @end
 
-@implementation liftTests
+@implementation open_barbell_trackerTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {

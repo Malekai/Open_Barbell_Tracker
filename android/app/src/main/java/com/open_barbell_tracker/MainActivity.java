@@ -1,4 +1,4 @@
-package com.lift;
+package com.open_barbell_tracker;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "lift";
+        return "open_barbell_tracker";
     }
 }

@@ -13,7 +13,7 @@ export const WEEK_FETCH_SUCCESS = 'week_fetch_success';
 export const ADD_DAY = 'add_day';
 export const DAYS_FETCH_SUCCESS = 'days_fetch_success';
 
-export const SESSION_FETCH_SUCCESS = 'session_fetch_success';
+export const SESSION_UPDATE = 'session_update';
 export const SAVE_SESSION = 'save_session';
 
 export const GET_UID = 'get_uid';

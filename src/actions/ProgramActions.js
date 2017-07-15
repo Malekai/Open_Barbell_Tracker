@@ -8,7 +8,7 @@ import {
   ADD_DAY,
   DAYS_FETCH_SUCCESS,
   GET_UID,
-  SESSION_FETCH_SUCCESS,
+  SESSION_UPDATE,
   GET_CURRENT_WEEK
 } from './types';
 
@@ -99,7 +99,15 @@ export const addDay = (uid, week, day) => {
 
   return (dispatch) => {
     firebase.database().ref(`/users/${currentUser.uid}/programs/${uid}/weeks/${week}/days`)
-      .update({ [day]: { 'name': day } })
+      .update({ [day]: { name: day, session: {
+          movement1: '',
+          movement2: '',
+          movement3: '',
+          movement4: '',
+          movement5: '',
+          movement6: '',
+          notes: ''
+        } }})
       .then(() => {
         Actions.DaysList({ type: 'reset' });
       });
@@ -107,20 +115,14 @@ export const addDay = (uid, week, day) => {
 }
 
 // Session Actions
-
-export const sessionFetch = (uid, week, day) => {
-  const { currentUser } = firebase.auth();
-
-  return (dispatch) => {
-    firebase.database().ref(`/users/${currentUser.uid}/programs/${uid}/weeks/${week}/days/${day}/session`)
-      .on('value', snapshot => {
-        dispatch({ type: SESSION_FETCH_SUCCESS, payload: snapshot.val() });
-      });
-  };
+export const sessionUpdate = ({ prop, value }) => {
+  return {
+    type: SESSION_UPDATE,
+    payload: { prop, value }
+  };  
 }
 
-
-export const saveSession = (movement1, movement2, movement3, movement4, movement5, movement6, uid, week, day) => {
+export const saveSession = (movement1, movement2, movement3, movement4, movement5, movement6, notes, uid, week, day) => {
   const { currentUser } = firebase.auth();
 
   return (dispatch) => {
@@ -132,6 +134,7 @@ export const saveSession = (movement1, movement2, movement3, movement4, movement
           movement4,
           movement5,
           movement6,
+          notes
         });  
   };
 }

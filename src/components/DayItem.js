@@ -7,13 +7,13 @@ import { CardSection } from './common';
 
 class DayItem extends Component {
   render() {
-    const { currentWeek, uid } = this.props;
-    const { name } = this.props.dayItem.day;
+    const { name, session } = this.props.dayItem.day;
+    const { uid, currentWeek } = this.props;
 
-    return (
+    return ( 
         <View>
           <CardSection>
-            <TouchableOpacity style={styles.buttonStyle} onPress={() => Actions.Session({ name, currentWeek, uid })}>
+            <TouchableOpacity style={styles.buttonStyle} onPress={() => Actions.Session({ session, uid, currentWeek, name })}>
               <Text style={styles.displayStyle}>
                 {name}
               </Text>
@@ -45,10 +45,10 @@ const styles = {
 }
 
 const mapStateToProps = state => {
-  const currentWeek = state.currentWeek;
   const uid = state.uid;
+  const currentWeek = state.currentWeek;
 
-  return { currentWeek, uid };
+  return { uid, currentWeek }
 }
 
 export default connect(mapStateToProps, null)(DayItem);

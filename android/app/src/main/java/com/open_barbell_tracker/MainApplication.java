@@ -1,4 +1,4 @@
-package com.lift;
+package com.open_barbell_tracker;
 
 import android.app.Application;
 
