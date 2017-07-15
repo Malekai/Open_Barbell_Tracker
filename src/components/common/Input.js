@@ -1,11 +1,11 @@
 import React from 'react';
 import { TextInput, View, Text } from 'react-native';
 
-const Input = ({ label, value, onChangeText, placeholder, secureTextEntry, noteStyle, entryStyle, multiline }) => {
+const Input = ({ label, value, onChangeText, placeholder, secureTextEntry, boxStyle, entryStyle, multiline }) => {
   const { inputStyle, labelStyle, containerStyle } = styles;
 
   return (
-    <View style={[containerStyle, noteStyle]}>
+    <View style={[containerStyle, boxStyle]}>
       <Text style={labelStyle}>{label}</Text>
       <TextInput
         multiline={multiline}
@@ -27,7 +27,7 @@ const styles = {
     paddingLeft: 5,
     fontSize: 18,
     lineHeight: 23,
-    flex: 2,
+    flex: 2
   },
   labelStyle: {
     fontSize: 18,
