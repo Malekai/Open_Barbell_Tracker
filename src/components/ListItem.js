@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
+import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
+import FontAwesome, { Icons } from 'react-native-fontawesome';
 import { CardSection } from './common';
 
 class ListItem extends Component {
 
   render() {
-    const { name } = this.props.program;
+    const { name, uid } = this.props.program;
     const { program } = this.props;
-    
+
     return (
         <View>
           <CardSection>
-            <TouchableOpacity style={styles.buttonStyle} onPress={() => Actions.WeekList({ program })}>
+            <TouchableOpacity style={styles.buttonStyle} onPress={() => Actions.WeekList({ program })}>  
               <Text style={styles.displayStyle}>
                 {name}
               </Text>

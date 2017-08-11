@@ -2,11 +2,18 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
-import { CardSection, Input, Button } from './common';
-import { sessionUpdate, saveSession } from '../actions';
+import { Actions } from 'react-native-router-flux';
+import { CardSection, Input, Button, Confirm } from './common';
+import { sessionUpdate, saveSession, deleteSession } from '../actions';
 
 class Session extends Component {
+  state = { deleteModalVisible: false }
+
   componentWillMount() {
+    const { currentWeek, name } = this.props;
+
+    Actions.refresh({ title: `${currentWeek} - ${name}` })
+
     _.each(this.props.session, (value, prop) => {
       this.props.sessionUpdate({ prop, value });
     });
@@ -18,11 +25,39 @@ class Session extends Component {
     this.props.saveSession( movement1, movement2, movement3, movement4, movement5, movement6, notes, uid, currentWeek, name, notes);
   }
 
+  onDecline() {
+    this.setState({ modalVisible: false, deleteModalVisible: false, text: '' });
+  }  
+
+  onAcceptDelete() {
+    const { uid, currentWeek, name } = this.props;
+
+    this.props.deleteSession(uid, currentWeek, name);
+
+    this.setState({ deleteModalVisible: false })
+
+    Actions.pop();
+
+  }    
+
 	render() {	
-    const { entryStyle, entryBoxStyle } = styles
+    const { entryStyle, entryBoxStyle, textStyle, modalTextStyle, buttonStyle } = styles;
 
     return (
 			<View>
+
+        <Confirm
+          animationType={"slide"}
+          buttonName="Delete"
+          visible={this.state.deleteModalVisible}
+          onAccept={this.onAcceptDelete.bind(this)}
+          onDecline={this.onDecline.bind(this)}
+          >
+          <Text style={modalTextStyle}>
+            Are you sure you want to delete {this.props.currentWeek} - {this.props.name} ?
+          </Text>
+        </Confirm>   
+
         <CardSection>
           <Input
           entryStyle={entryStyle}
@@ -100,6 +135,16 @@ class Session extends Component {
           	</Button>
         </CardSection>		
 
+        <CardSection>
+          <Button 
+            onPress={() => this.setState({ deleteModalVisible: !this.state.modalVisible })} 
+            altTextStyle={textStyle} 
+            altButtonStyle={buttonStyle}          
+          >
+            Delete {this.props.currentWeek} - {this.props.name}
+          </Button>
+        </CardSection>        
+
 			</View>
 		)
 	}
@@ -135,8 +180,32 @@ const styles = {
   entryBoxStyle: {
     borderBottomWidth: 1,
     borderBottomColor: '#007aff'    
-  }
+  },
+  textStyle: {
+    alignSelf: 'center',
+    color: 'red',
+    fontSize: 16,
+    fontWeight: '600',
+    paddingTop: 10,
+    paddingBottom: 10
+  },
+  modalTextStyle: {
+    flex: 1,
+    fontSize: 18,
+    textAlign: 'center',
+    lineHeight: 40
+  },
+  buttonStyle: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: 'red',
+    marginLeft: 5,
+    marginRight: 5
+  }    
 }
 
-export default connect(mapStateToProps, { sessionUpdate, saveSession })(Session);
+export default connect(mapStateToProps, { sessionUpdate, saveSession, deleteSession })(Session);
 

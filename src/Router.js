@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, StatusBar } from 'react-native';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
 import ProgramList from './components/ProgramList';
@@ -8,7 +9,12 @@ import Session from './components/Session';
 
 const RouterComponent = () => {
   return (
-    <Router sceneStyle={{ paddingTop: 65 }}>
+    <Router 
+      leftButtonIconStyle={{ tintColor: 'white' }} 
+      sceneStyle={{ paddingTop: 65 }} 
+      navigationBarStyle={{ backgroundColor: '#007aff' }} 
+      titleStyle={{ fontWeight: '500', color:"#FFF" }}
+    >
       <Scene key="auth">
         <Scene key="login" component={LoginForm} title="Login" />
       </Scene>

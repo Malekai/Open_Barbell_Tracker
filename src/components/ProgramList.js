@@ -42,9 +42,10 @@ class ProgramList extends Component {
 
   render() {
     return (
-      <Card>
+      <Card>    
         <Confirm
           animationType={"slide"}
+          buttonName="Add"
           visible={this.state.modalVisible}
           onAccept={this.onAccept.bind(this)}
           onDecline={this.onDecline.bind(this)}
@@ -69,7 +70,6 @@ class ProgramList extends Component {
           </Button>
         </CardSection>
       </Card>
-
     );
   }
 }
@@ -81,6 +81,5 @@ const mapStateToProps = state => {
 
   return { programs };
 }
-
 
 export default connect(mapStateToProps, { addProgram, programFetch })(ProgramList);

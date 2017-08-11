@@ -37,6 +37,15 @@ export const addProgram = (name) => {
   };
 }
 
+export const deleteProgram = (uid) => {
+  const { currentUser } = firebase.auth();
+
+  return (dispatch) => {
+    firebase.database().ref(`/users/${currentUser.uid}/programs/${uid}`)
+      .remove()
+  }
+}
+
 // Week Actions
 
 export const weekFetch = (uid) => {
@@ -63,7 +72,16 @@ export const addWeek = (uid, week) => {
   };
 }
 
-// UID tracker
+export const deleteWeek = (uid, week) => {
+  const { currentUser } = firebase.auth();
+
+  return (dispatch) => {
+    firebase.database().ref(`/users/${currentUser.uid}/programs/${uid}/weeks/${week}`)
+      .remove()
+  }
+}
+
+// PROGRAM UID tracker
 
 export const getUID = (uid) => {
   return {
@@ -112,6 +130,15 @@ export const addDay = (uid, week, day) => {
         Actions.DaysList({ type: 'reset' });
       });
   };
+}
+
+export const deleteSession = (uid, week, day) => {
+  const { currentUser } = firebase.auth();
+
+  return (dispatch) => {
+    firebase.database().ref(`/users/${currentUser.uid}/programs/${uid}/weeks/${week}/days/${day}`)
+      .remove()
+  }
 }
 
 // Session Actions
