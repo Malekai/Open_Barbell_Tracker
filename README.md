@@ -1,6 +1,7 @@
 # Open_Barbell_Tracker
 React-Native/Redux - User friendly fully customizable training log
 
+<kbd><img src="https://user-images.githubusercontent.com/16912505/29200569-7edaa6ec-7e24-11e7-81e3-e9f026fae381.png" /></kbd>
 
 <kbd><img src="https://user-images.githubusercontent.com/16912505/29200448-47a5b208-7e23-11e7-93f7-e8fd17a4cc52.png" /></kbd>
 
